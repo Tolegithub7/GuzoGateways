@@ -1,3 +1,7 @@
+<?php
+  define("APPURL", "http://localhost:3000/xampp/htdocs/GuzoGateways");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +58,7 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="deals.html">Deals</a></li>
                         <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><a href=" <?php echo APPURL;  ?>/auth/register.php">Register</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
