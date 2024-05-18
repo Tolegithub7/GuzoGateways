@@ -2,6 +2,7 @@
 //Assign constants 
 echo  "Hey there";
     //Host
+try {
     define("HOST", "localhost");
     //dbname
     define("DBNAME", "GuzoGateways");
@@ -12,6 +13,7 @@ echo  "Hey there";
 
     // Create connection using PDO
     $conn = new PDO("mysql:host=".HOST.";dbname=".DBNAME."", USER, PASS);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if ($conn == true) {
         echo "Connection established";
     } else {
@@ -31,7 +33,9 @@ echo  "Hey there";
     //     {
     //     echo "Connection failed: " . $e->getMessage();
     //     }
+}
+catch( PDOException $Exception ) {
 
-
-
+    echo $Exception->getMessage();
+}
 ?>
