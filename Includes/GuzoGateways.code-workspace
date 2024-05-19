@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../../../Users/HP/Downloads/wooxtravel/wooxtravel/vendor"
+	},
+	{
+		"path": "../../../../Users/HP/Downloads/wooxtravel/wooxtravel/assets"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "GuzoGateways"
+  }
+}
