@@ -1,6 +1,11 @@
 <?php
   require "../Includes/header.php";
 ?>
+<?php require "../config/config.php"; ?>
+<?php 
+  
+
+?>
 
 
 
@@ -9,6 +14,7 @@
       <div class="row">
         
         <div class="col-lg-12">
+          <H1>tHIS IS TOLE</H1>
           <form id="reservation-form" name="gs" method="submit" role="search" action="#">
             <div class="row">
               <div class="col-lg-12">
@@ -27,7 +33,7 @@
                       <input type="text" name="Name" class="email" placeholder="email" autocomplete="on" required>
                   </fieldset>
               </div>
-           
+              
               <div class="col-md-12">
                 <fieldset>
                     <label for="Name" class="form-label">Your Password</label>

@@ -1,5 +1,6 @@
 <?php
-  define("APPURL", "http://localhost:3000/xampp/htdocs/GuzoGateways");
+  define("APPURL", "http://localhost:3000/");
+
 ?>
 
 <!DOCTYPE html>
