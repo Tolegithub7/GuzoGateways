@@ -2,7 +2,6 @@
   define("APPURL", "http://localhost:3000/");
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

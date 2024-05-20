@@ -1,9 +1,11 @@
 <?php
   require "../Includes/header.php";
 ?>
-<?php require "../config/config.php"; ?>
 <?php 
-  if (isset($_post("submit"))){
+  require "../config/config.php"; 
+?>
+<?php 
+  if (isset($_post["submit"])){
     if (empty($_POST["username"]) or empty($_POST["email"]) or empty($_POST["password"])){
       echo "<script> alert('some input are empty please enter all inputs');</script>";
     } else {
@@ -21,7 +23,7 @@
         ":mypassword" => $password
       ]);
 
-      header("Location: login.php");
+      header("location: login.php");
 
 
     }
@@ -36,7 +38,7 @@
       <div class="row">
         
         <div class="col-lg-12">
-          <form id="reservation-form" name="gs" method="POST" role="search" action="register.php">
+          <form id="reservation-form" name="gs" method="POST" role="search" action="login.php">
             <div class="row">
               <div class="col-lg-12">
                 <h4>Register</h4>
