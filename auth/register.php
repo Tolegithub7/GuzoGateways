@@ -37,7 +37,7 @@
       <div class="row">
         
         <div class="col-lg-12">
-          <form id="reservation-form" name="gs" method="POST" role="search" action="login.php">
+          <form id="reservation-form" name="gs" method="POST" role="search" action="register.php">
             <div class="row">
               <div class="col-lg-12">
                 <h4>Register</h4>

@@ -57,7 +57,7 @@
                         <li><a href="<?php echo APPURL; ?>/index.php" class="active">Home</a></li>
                         <li><a href="<?php echo APPURL; ?>/about.html">About</a></li>
                         <li><a href="<?php echo APPURL; ?>/deals.html">Deals</a></li>
-                        <li><a href="<?php echo APPURL; ?>/login.html">Login</a></li>
+                        <li><a href="<?php echo APPURL; ?>/auth/login.php">Login</a></li>
                         <li><a href=" <?php echo APPURL;  ?>/auth/register.php">Register</a></li>
                     </ul>   
                     <a class='menu-trigger'>
