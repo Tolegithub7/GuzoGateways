@@ -9,35 +9,35 @@
       $email = $_POST['email'];
       $password = $_POST['password'];
 
-      // // check for the email with a query using a prepared statement
-      // $login = $conn->prepare("SELECT * FROM users WHERE email=:email");
-      // $login->execute([':email' => $email]);
-      // $fetch = $login->fetch(PDO::FETCH_ASSOC);
-      
-      // if ($login->rowCount() > 0){
-      //   // Verify the password
-      //   if (password_verify($password, $fetch['mypassword'])) {
-      //     echo "<script>alert('Login successful');</script>";
-      //     // You can redirect to another page or start a session here
-      //   } else {
-      //     echo "<script>alert('Incorrect password');</script>";
-      //   }
-      // } else {
-      //   echo "<script>alert('Email not found');</script>";
-      // }
-
-      $login = $conn->query("SELECT * FROM users WHERE email =  '$email'");
-      $login->execute();
+      // check for the email with a query using a prepared statement
+      $login = $conn->prepare("SELECT * FROM users WHERE email=:email");
+      $login->execute([':email' => $email]);
       $fetch = $login->fetch(PDO::FETCH_ASSOC);
-      if ($login->rowCount() > 0) {
+      
+      if ($login->rowCount() > 0){
+        // Verify the password
         if (password_verify($password, $fetch['mypassword'])) {
-          // echo "<script> Alert('Password is fine!');</script>";
+          echo "<script>alert('Login successful');</script>";
+          // You can redirect to another page or start a session here
         } else {
-          echo "<script> Alert('Email or Password is wrong!');</script>";
+          echo "<script>alert('Incorrect password');</script>";
         }
       } else {
-        echo "<script> Alert('Email or Password is wrong!');</script>";
+        echo "<script>alert('Email not found');</script>";
       }
+
+      // $login = $conn->query("SELECT * FROM users WHERE email =  '$email'");
+      // $login->execute();
+      // $fetch = $login->fetch(PDO::FETCH_ASSOC);
+      // if ($login->rowCount() > 0) {
+      //   if (password_verify($password, $fetch['mypassword'])) {
+      //     // echo "<script> Alert('Password is fine!');</script>";
+      //   } else {
+      //     echo "<script> Alert('Email or Password is wrong!');</script>";
+      //   }
+      // } else {
+      //   echo "<script> Alert('Email or Password is wrong!');</script>";
+      // }
     }
   }
 ?>
@@ -59,6 +59,7 @@
                       <input type="text" name="email" class="Name" placeholder="email" autocomplete="on" required>
                   </fieldset>
               </div>
+
               <!-- <div class="col-lg-6">
                 <fieldset>
                     <label for="Number" class="form-label">Your Phone Number</label>
