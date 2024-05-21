@@ -14,8 +14,7 @@
       $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
       $insert = $conn ->prepare(
-        "INSERT INTO users (username, email, mypassword ) 
-        VALUES (:username, :email, :mypassword)"
+        "INSERT INTO users (username, email, mypassword) VALUES (:username, :email, :mypassword)"
       );
       $insert->execute([
         ":username" => $username,
