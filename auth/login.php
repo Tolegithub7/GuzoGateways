@@ -1,32 +1,47 @@
-
 <?php require("../includes/header.php"); ?>
 <?php require("../config/config.php"); ?>
 <?php
   //take the data from the inputs
   if (isset($_POST['submit'])){
     if (empty($_POST['email']) || empty($_POST['password'])){
-      echo "<script> Alert('one or more input are empty');</script>";
+      echo "<script>alert('One or more inputs are empty');</script>";
     } else {
       $email = $_POST['email'];
       $password = $_POST['password'];
-//check for the email with a query first
-      $login = $conn->query("SELECT * FROM users WHERE email='$email'");
+
+      // // check for the email with a query using a prepared statement
+      // $login = $conn->prepare("SELECT * FROM users WHERE email=:email");
+      // $login->execute([':email' => $email]);
+      // $fetch = $login->fetch(PDO::FETCH_ASSOC);
+      
+      // if ($login->rowCount() > 0){
+      //   // Verify the password
+      //   if (password_verify($password, $fetch['mypassword'])) {
+      //     echo "<script>alert('Login successful');</script>";
+      //     // You can redirect to another page or start a session here
+      //   } else {
+      //     echo "<script>alert('Incorrect password');</script>";
+      //   }
+      // } else {
+      //   echo "<script>alert('Email not found');</script>";
+      // }
+
+      $login = $conn->query("SELECT * FROM users WHERE email =  '$email'");
       $login->execute();
       $fetch = $login->fetch(PDO::FETCH_ASSOC);
-      
-      if ($login->rowCount() > 0){
-        echo "<script> Alert('email is fine ha');</script>";
-        // echo $login->rowCount();
+      if ($login->rowCount() > 0) {
+        if (password_verify($password, $fetch['mypassword'])) {
+          // echo "<script> Alert('Password is fine!');</script>";
+        } else {
+          echo "<script> Alert('Email or Password is wrong!');</script>";
+        }
+      } else {
+        echo "<script> Alert('Email or Password is wrong!');</script>";
       }
-
     }
   }
-  
-
-  //check for  the password with password verify 
-
-
 ?>
+
 
   <div class="reservation-form">
     <div class="container">
