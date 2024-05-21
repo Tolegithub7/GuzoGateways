@@ -1,14 +1,38 @@
 
 <?php require("../includes/header.php"); ?>
 <?php require("../config/config.php"); ?>
+<?php
+  //take the data from the inputs
+  if (isset($_POST['submit'])){
+    if (empty($_POST['email']) || empty($_POST['password'])){
+      echo "<script> Alert('one or more input are empty');</script>";
+    } else {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+//check for the email with a query first
+      $login = $conn->query("SELECT * FROM users WHERE email='$email'");
+      $login->execute();
+      $fetch = $login->fetch(PDO::FETCH_ASSOC);
+      
+      if ($login->rowCount() > 0){
+        echo $login->rowCount();
+      }
 
+    }
+  }
+  
+
+  //check for  the password with password verify 
+
+
+?>
 
   <div class="reservation-form">
     <div class="container">
       <div class="row">
         
         <div class="col-lg-12">
-          <form id="reservation-form" name="gs" method="submit" role="search" action="#">
+          <form id="reservation-form" method="POST" role="search" action="login.php">
             <div class="row">
               <div class="col-lg-12">
                 <h4>Login</h4>
@@ -16,7 +40,7 @@
               <div class="col-md-12">
                   <fieldset>
                       <label for="Name" class="form-label">Your Email</label>
-                      <input type="text" name="Name" class="Name" placeholder="email" autocomplete="on" required>
+                      <input type="text" name="email" class="Name" placeholder="email" autocomplete="on" required>
                   </fieldset>
               </div>
               <!-- <div class="col-lg-6">
@@ -59,12 +83,12 @@
               <div class="col-md-12">
                 <fieldset>
                     <label for="Name" class="form-label">Your Password</label>
-                    <input type="text" name="Name" class="Name" placeholder="password" autocomplete="on" required>
+                    <input type="text" name="password" class="Name" placeholder="password" autocomplete="on" required>
                 </fieldset>
               </div>
               <div class="col-lg-12">                        
                   <fieldset>
-                      <button class="main-button">login</button>
+                      <button type="submit" name="submit" class="main-button">login</button>
                   </fieldset>
               </div>
             </div>
