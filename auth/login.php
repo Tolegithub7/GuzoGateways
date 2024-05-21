@@ -15,7 +15,8 @@
       $fetch = $login->fetch(PDO::FETCH_ASSOC);
       
       if ($login->rowCount() > 0){
-        echo $login->rowCount();
+        echo "<script> Alert('email is fine ha');</script>";
+        // echo $login->rowCount();
       }
 
     }
