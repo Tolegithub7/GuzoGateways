@@ -19,6 +19,8 @@
         if (password_verify($password, $fetch['mypassword'])) {
           echo "<script>alert('Login successful');</script>";
           // You can redirect to another page or start a session here
+          $_SESSION['username'] = $fetch['username'];
+          $_SESSION['user_id'] = $fetch['id'];
         } else {
           echo "<script>alert('Incorrect password');</script>";
         }
