@@ -11,7 +11,9 @@
 
       // check for the email with a query using a prepared statement
       $login = $conn->prepare("SELECT * FROM users WHERE email=:email");
-      $login->execute([':email' => $email]);
+      $login->execute([
+        ':email' => $email
+      ]);
       $fetch = $login->fetch(PDO::FETCH_ASSOC);
       
       if ($login->rowCount() > 0){
@@ -21,6 +23,8 @@
           // You can redirect to another page or start a session here
           $_SESSION['username'] = $fetch['username'];
           $_SESSION['user_id'] = $fetch['id'];
+
+          header("Location: " .APPURL . "");
         } else {
           echo "<script>alert('Incorrect password');</script>";
         }
