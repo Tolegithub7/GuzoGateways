@@ -67,7 +67,7 @@
                             <li><a class="dropdown-item text-black" href="#">Action</a></li>
                             <li><a class="dropdown-item text-black" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-black" href="Logout.php">Logout</a></li>
+                            <li><a class="dropdown-item text-black" href=" <?php echo APPURL;  ?>/auth/Logout.php">Logout</a></li>
                           </ul>
                         </li>
                       <?php else: ?>
