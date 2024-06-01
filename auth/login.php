@@ -1,6 +1,10 @@
 <?php require("../includes/header.php"); ?>
 <?php require("../config/config.php"); ?>
 <?php
+    if (isset($_SESSION["username"])) {
+      header("Location: " .APPURL ."");
+    }
+
   //take the data from the inputs
   if (isset($_POST['submit'])){
     if (empty($_POST['email']) || empty($_POST['password'])){
