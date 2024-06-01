@@ -58,21 +58,22 @@
                       <li><a href="<?php echo APPURL; ?>/index.php" class="active">Home</a></li>
                       <li><a href="<?php echo APPURL; ?>/about.php">About</a></li>
                       <li><a href="<?php echo APPURL; ?>/deals.html">Deals</a></li>
-
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <?PHP echo $_SESSION["username"]; ?>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item text-black" href="#">Action</a></li>
-                          <li><a class="dropdown-item text-black" href="#">Another action</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-black" href="Logout.php">Logout</a></li>
-                        </ul>
-                      </li>
-
-                      <li><a href="<?php echo APPURL; ?>/auth/login.php">Login</a></li>
-                      <li><a href=" <?php echo APPURL;  ?>/auth/register.php">Register</a></li>
+                      <?php if (isset($_SESSION["username"])) : ?>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?PHP echo $_SESSION["username"]; ?>
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-black" href="#">Action</a></li>
+                            <li><a class="dropdown-item text-black" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-black" href="Logout.php">Logout</a></li>
+                          </ul>
+                        </li>
+                      <?php else: ?>
+                        <li><a href="<?php echo APPURL; ?>/auth/login.php">Login</a></li>
+                        <li><a href=" <?php echo APPURL;  ?>/auth/register.php">Register</a></li>
+                      <?php endif; ?>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
