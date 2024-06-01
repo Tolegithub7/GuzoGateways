@@ -22,6 +22,7 @@
   <script src="<?php echo APPURL; ?>/assets/js/tabs.js"></script>
   <script src="<?php echo APPURL; ?>/assets/js/popup.js"></script>
   <script src="<?php echo APPURL; ?>/assets/js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     function bannerSwitcher() {
