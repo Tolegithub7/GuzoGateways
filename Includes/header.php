@@ -16,13 +16,13 @@
     <title>GuzoGateways</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo APPURL; ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo APPURL; ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href=" <?php echo APPURL; ?>/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="<?php echo APPURL; ?>/assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="<?php echo APPURL; ?>/assets/css/owl.css">
-    <link rel="stylesheet" href="<?php echo APPURL; ?>/assets/css/animate.css">
+    <link rel="stylesheet" href=" <?php echo APPURL; ?>assets/css/fontawesome.css">
+    <link rel="stylesheet" href="<?php echo APPURL; ?>assets/css/templatemo-woox-travel.css">
+    <link rel="stylesheet" href="<?php echo APPURL; ?>assets/css/owl.css">
+    <link rel="stylesheet" href="<?php echo APPURL; ?>assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
   </head>
@@ -49,15 +49,15 @@
             <div class="col-12">
                 <nav class="main-nav ">
                     <!-- ***** Logo Start ***** -->
-                    <a href="<?php echo APPURL; ?>/index.php" class="logo">
-                        <img src="<?php echo APPURL; ?>/assets/images/logo.png" alt="">
+                    <a href="<?php echo APPURL; ?>index.php" class="logo">
+                        <img src="<?php echo APPURL; ?>assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="<?php echo APPURL; ?>/index.php" class="active">Home</a></li>
-                      <li><a href="<?php echo APPURL; ?>/about.php">About</a></li>
-                      <li><a href="<?php echo APPURL; ?>/deals.html">Deals</a></li>
+                      <li><a href="<?php echo APPURL; ?>index.php" class="active">Home</a></li>
+                      <li><a href="<?php echo APPURL; ?>about.php">About</a></li>
+                      <li><a href="<?php echo APPURL; ?>deals.html">Deals</a></li>
                       <?php if (isset($_SESSION["username"])) : ?>
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,12 +67,12 @@
                             <li><a class="dropdown-item text-black" href="#">Action</a></li>
                             <li><a class="dropdown-item text-black" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-black" href=" <?php echo APPURL;  ?>/auth/Logout.php">Logout</a></li>
+                            <li><a class="dropdown-item text-black" href=" <?php echo APPURL;  ?>auth/Logout.php">Logout</a></li>
                           </ul>
                         </li>
                       <?php else: ?>
-                        <li><a href="<?php echo APPURL; ?>/auth/login.php">Login</a></li>
-                        <li><a href=" <?php echo APPURL;  ?>/auth/register.php">Register</a></li>
+                        <li><a href="<?php echo APPURL; ?>auth/login.php">Login</a></li>
+                        <li><a href=" <?php echo APPURL;  ?>auth/register.php">Register</a></li>
                       <?php endif; ?>
                     </ul>   
                     <a class='menu-trigger'>
