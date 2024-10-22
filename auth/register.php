@@ -6,32 +6,32 @@
 ?>
 <?php 
 
-  if (isset($_SESSION["username"])) {
-    header("Location: " .APPURL ."");
-  }
+  // if (isset($_SESSION["username"])) {
+  //   header("Location: " .APPURL ."");
+  // }
 
-  if (isset($_POST["submit"])){
-    if (empty($_POST["username"]) or empty($_POST["email"]) or empty($_POST["password"])){
-      echo "<script> alert('some input are empty please enter all inputs');</script>";
-    } else {
-      $username = $_POST["username"];
-      $email = $_POST["email"];
-      $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+  // if (isset($_POST["submit"])){
+  //   if (empty($_POST["username"]) or empty($_POST["email"]) or empty($_POST["password"])){
+  //     echo "<script> alert('some input are empty please enter all inputs');</script>";
+  //   } else {
+  //     $username = $_POST["username"];
+  //     $email = $_POST["email"];
+  //     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-      $insert = $conn ->prepare(
-        "INSERT INTO users (username, email, mypassword) VALUES (:username, :email, :mypassword)"
-      );
-      $insert->execute([
-        ":username" => $username,
-        ":email" => $email,
-        ":mypassword" => $password
-      ]);
+  //     $insert = $conn ->prepare(
+  //       "INSERT INTO users (username, email, mypassword) VALUES (:username, :email, :mypassword)"
+  //     );
+  //     $insert->execute([
+  //       ":username" => $username,
+  //       ":email" => $email,
+  //       ":mypassword" => $password
+  //     ]);
 
-      header("location: login.php");
+  //     header("location: login.php");
 
 
-    }
-  }
+  //   }
+  // }
 
 ?>
 
